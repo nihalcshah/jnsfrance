@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/timeline.css' %}">
+
+
+    {% block nav %}
+    <section class="kloc" style="margin-bottom: 0;" >
+
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light navbar-custom">
+            <div class="container-fluid">
+                <h1 class="navbar-brand"><b>JNS</b>FAMILY</h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="{% url 'tutorial'%}">Tutorial</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'about'%}">About</a>
+                        </li>
+                        <li class="nav-item dropdown ">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+                            Dates
+                          </a>
+                          
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <form method="post" action="">
+                              {% csrf_token %}
+                              {% for d in dates %}
+                                <li><input class="dropdown-item" type="submit" name="date" value="{{d}}"></li>
+                              {% endfor %}
+                            </form>
+                          </ul>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="{% url 'admin:index' %}">Admin</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    {% endblock %}
+    {% if chosen %}
+    <section>
+      <div class="container-fluid intro">
+          <div style="">
+              <h1 style="" class="row">Timeline</h1>
+              <span style="" class="row"><pre></pre>JNSFamily's France Itinerary: {{date}}
+              <br>  Scroll to see more</span>
+              
+              
+          </div>
+      </div>
+    </section>
+
+    
+
+    <section class="container-fluid" style="margin-bottom: 0; bottom:0; left: -5%;">
+        <div class="timeline">
+          {% for event, side in timelinevals %}
+              {% if side%}
+              <div class="container right reveal-right">
+                <div class="date">{{event.formattedtime}}</div>
+                <!-- <i class="icon fa fa-home"></i> -->
+                <div class="content">
+                  <div>
+                    <h2>{{event.place}}</h2>
+                    <a href="{{event.googlelink}}">
+                      <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                  <p>
+                    {{event.description}}
+                  </p>
+                  
+                </div>
+              </div>
+              {% else %}
+              <div class="container left reveal-left">
+                <div class="date">{{event.formattedtime}}</div>
+                <!-- <i class="icon fa fa-home"></i> -->
+                <div class="content">
+                  <div class="row">
+                    <h2 class="">{{event.place}}</h2>
+                    <a class="ml-2" href="{{event.googlelink}}">
+                      <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                  <p class="row">
+                    {{event.description}}
+                  </p>
+                </div>
+              </div>
+              {% endif %}
+          {% endfor %}
+        </div>
+
+
+    </section>
+    {%else%}
+    <section>
+      <div class="container-fluid intro">
+          <div style="">
+              <h1 style="" class="row">Timeline</h1>
+              <span style="" class="row"><pre></pre>JNSFamily's France Itinerary</span>
+              <p style="" class="row">
+                <p>
+                  In our planning of France, as well as out exploration of it, we will need <br>
+                  more proper planning and transparency in our plans. This purpose of this website <br>
+                  is to organize our information into a more solid display method. <br> <br>
+                  This tool will not only come into use with smaller things during our planning stage, <br>
+                  such as deciding where we are going and how everthing fits in, but will also allow us to <br>
+                  organize ourselves in France as well.
+                  <br><br>
+                  Check the <a href="">tutorial</a> page on how to add events to the timeline.
+                </p>
+              </p>
+              
+              
+          </div>
+      </div>
+    </section>
+    {% endif %}
+{% endblock %}
+    
+    <!-- Profile Bio -->

@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block content %}
+    <section>
+        <div class="container-fluid intro">
+            <div style="">
+                <h1 style="" class="row">Timeline</h1>
+                <span style="" class="row"><pre></pre>This is our JNS Family Trip Itinerary</span>
+                <form method="post" class="row form-select form-select-lg" aria-label=".form-select-lg example" action="">
+                  {% csrf_token %}
+                  <select name="date" id="">
+                    <option value="">Select a date</option>
+                    {% for d in dates %}
+                      <option value="{{d}}">{{d}}</option>
+                    {% endfor %}
+                  </select>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container-fluid" style="margin-bottom: 0; bottom:0; left: -5%;">
+        <div class="timeline">
+            <div class="container left reveal-left">
+              <div class="date">29 JUL</div>
+              <!-- <i class="icon fa fa-home"></i> -->
+              <div class="content">
+                <h2>The DM</h2>
+                <p>
+                  Our first interaction and the moment when I inserted myself into your world.
+                </p>
+              </div>
+            </div>
+            <div class="container right reveal-right">
+              <div class="date">11 Sept</div>
+              <!-- <i class="icon fa fa-gift"></i> -->
+              <div class="content">
+                <h2>The date of Prisha's party</h2>
+                <p>
+                  We met for the first time and danced. Your face was burnt into my heart after that night.
+                </p>
+              </div>
+            </div>
+            <div class="container left reveal-left">
+              <div class="date">30 Oct</div>
+              <!-- <i class="icon fa fa-user"></i> -->
+              <div class="content">
+                <h2>Fields of Fear</h2>
+                <p>
+                  This was our first date. We were both nervous, but it went great.
+                </p>
+              </div>
+            </div>
+            <div class="container right reveal reveal-right">
+              <div class="date">4 Nov</div>
+              <!-- <i class="icon fa fa-running"></i> -->
+              <div class="content">
+                <h2>We agree to be exclusive</h2>
+                <p>
+                  This was the first time I knew I had pulled you. It meant so much to me to finally be yours.
+                </p>
+              </div>
+            </div>
+            <div class="container left reveal-left">
+              <div class="date">12 Feb</div>
+              <!-- <i class="icon fa fa-cog"></i> -->
+              <div class="content">
+                <h2>Our Valentine's Day Date</h2>
+                <p>
+                  We went to One Loudoun and had so much fun. It was lots of laughs and I got you pink carnations.
+                </p>
+              </div>
+            </div>
+            <div class="container right reveal-right">
+              <div class="date">6 Mar</div>
+              <!-- <i class="icon fa fa-certificate"></i> -->
+              <div class="content">
+                <h2>Lake Anne</h2>
+                <p>
+                  We(I) had fun walking around Lake Anne and having physical touch with you.
+                </p>
+              </div>
+            </div>
+            <div class="container left reveal-left">
+                <div class="date">22 Mar</div>
+                <!-- <i class="icon fa fa-cog"></i> -->
+                <div class="content">
+                  <h2>Batman</h2>
+                  <p>
+                    We went to watch Batman with Neev and Rono. It was the first time our families met.
+                  </p>
+                </div>
+            </div>
+            <div class="container right reveal-right">
+                <div class="date">14 Apr</div>
+                <!-- <i class="icon fa fa-certificate"></i> -->
+                <div class="content">
+                  <h2>Our First Kiss</h2>
+                  <p>
+                      Laughter and tears filled our faces this perfect April night.
+                  </p>
+                </div>
+            </div>
+            <div class="container left reveal-left">
+                <div class="date">22 Apr</div>
+                <!-- <i class="icon fa fa-cog"></i> -->
+                <div class="content">
+                  <h2>I meet your mom</h2>
+                  <p>
+                    Reston Town Center had us dancing around, and my impression on your mother solidified it.
+                  </p>
+                </div>
+            </div>
+            <div class="container right reveal-right">
+                <div class="date">24 Apr</div>
+                <!-- <i class="icon fa fa-certificate"></i> -->
+                <div class="content">
+                  <h2>"I love you"</h2>
+                  <p>
+                      I fell in love for the first time.
+                  </p>
+                </div>
+            </div>
+            <div class="container left reveal-left">
+                <div class="date">13 May</div>
+                <!-- <i class="icon fa fa-cog"></i> -->
+                <div class="content">
+                  <h2>Oishee's Crib</h2>
+                  <p>
+                    I come over to your house and officially meet your parents. You give me our ring.
+                  </p>
+                </div>
+            </div>
+            <div class="container right reveal-right">
+                <div class="date">29 May</div>
+                <!-- <i class="icon fa fa-cog"></i> -->
+                <div class="content">
+                  <h2>My Party</h2>
+                  <p>
+                    You come over to my house and finally meet my friends. I touch you for the first time.
+                  </p>
+                </div>
+            </div>
+            <div class="container left reveal-left">
+                <div class="date">9 Jun</div>
+                <!-- <i class="icon fa fa-cog"></i> -->
+                <div class="content">
+                  <h2>We start dating</h2>
+                  <p>
+                    I send you off with cutesy kisses and a Barnes & Nobles makeout sesh after we start dating.
+                  </p>
+                </div>
+            </div>
+            <div class="container right reveal-right">
+                <div class="date">11 Jun</div>
+                <!-- <i class="icon fa fa-cog"></i> -->
+                <div class="content">
+                  <h2>Our 9-month anniversary</h2>
+                  <p>
+                    We've made it this far, let's see what else is to come.
+                  </p>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+{% endblock %}
+    
+    <!-- Profile Bio -->

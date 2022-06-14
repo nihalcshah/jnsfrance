@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+.fonts{
+    font-family: 'Lato', sans-serif;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    margin: 0%;
+    min-width: 100%;
+    position: relative;
+    width: 100vw;
+    /* overflow: hidden; */
+    overflow-x:hidden;
+    height: 100%;
+    color:darkslateblue;
+}
+
+.val{
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    
+}
+
+  
+
+@-webkit-keyframes fadeInLeft {
+    0% {
+       opacity: 0;
+       -webkit-transform: translateX(-20px);
+    }
+    100% {
+       opacity: 1;
+       -webkit-transform: translateX(0);
+    }
+ }
+ 
+ @keyframes fadeInLeft {
+    0% {
+       opacity: 0;
+       transform: translateX(-20px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+ }
+ 
+ .fadeInLeft {
+ -webkit-animation-name: fadeInLeft;
+ animation-name: fadeInLeft;
+ } 
+
+.navbar-custom{
+    color: darkslateblue;
+    background-color: rgba(255,255,255,0.9);
+}
+
+.nav a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* .nav a:hover{
+    color: #fff;
+}
+
+.nav a.active{
+    color: #fff;
+} */
+
+.bio h1{
+    font-size: 50px;
+}
+.bio .col-5{
+    font-size: 22px;
+}
+
+.nav h1{
+    /* vertical-align: middle; */
+    /* height: max-content; */
+    position: relative;
+    width: 20%;
+    font-size: 50px;
+    text-align: left;
+    margin-left: 30px;
+    /* background-color: aqua; */
+}
+
+ .key{
+    margin-left: 0.2cm;
+}
+
+.nav-wrapper{
+    right: 0%;
+    display: inline;
+    float: right;
+}
+
+.nav ul{
+    display: block;
+    list-style: none;
+    margin: 0;
+    
+    padding: 0;
+}
+.navbar-custom h1{
+    color: darkolivegreen;
+}
+
+.navbar-custom ul li{
+    position: relative;
+    color: darkslateblue !important;
+    display: inline-block;
+    /* align-items: center; */
+    /* margin-left: ; */
+    /* width: 20%; */
+}
+
+.navbar-custom ul li a{
+    text-decoration: none;
+    color: darkslateblue;
+    font-size: 20;
+    /* font-weight: bold;  */
+}
+
+.navbar-custom ul li:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    color: darkslateblue;
+    background-color: darkslateblue;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.navbar-custom ul li:hover:after {
+    transform: scaleX(1);
+    color: darkslateblue;
+    transform-origin: bottom left;
+}
+
+a{
+    text-decoration: none;
+}
+
+.iconlink{
+
+    color: white;
+}
+
+.iconlink:hover{
+    color: rgb(70, 91, 58);
+}
+
+.gallerylink{
+    width: 420px;
+    border-color: rgb(62, 94, 18); border-width: 10px; border-style: solid;
+}
+
+.gallerylink:hover{
+    width: 430px;
+    /* border-color: white; */
+}
+
+.timeicon{
+    transform: rotate(0deg);
+    transition: transform 1s;
+}
+
+.timeicon:hover{
+    transform: rotate(90deg);
+}
+
+
+footer a{
+    text-decoration: none;
+}
+
+footer{
+    /* margin-top: -60px; */
+    /* height: 50px; */
+    /* position: relative;
+    bottom:0;
+
+   width:100%; */
+   /* height:60px; */
+    /* position: absolute;
+    /* bottom: 0; */
+    /* top: 100%; */ 
+}
+
+.container a{
+    text-decoration: none;
+    color: white;
+}
+
+.crotate{
+    height: 550px;
+    background-color: rgb(42, 53, 24);
+    position: relative;
+    align-items: center;
+    display: block;
+}
+
+.carousel{
+}
+
+.carousel-item img{
+    margin-top: 10px;
+    margin-left: auto;
+    position: relative;
+    margin-right: auto;
+    /* height: auto; */
+    height :85vh;
+
+    
+    /* display: inline-block; */
+    object-fit: cover;
+    object-position: center;
+    /* max-height: 500px; */
+    overflow: hidden;
+}
+
+.carouselbutton:focus{
+    outline: none;
+    color: rgb(70, 91, 58);
+}
+
+.sorry{
+    font-size: 25px; position: absolute; bottom: 80px;
+}
+
+.carousel-indicators button{
+    margin:12px;
+    width: 20%;
+    height: 8px;
+    border: 0;
+    margin-bottom: 30px;
+}
+
+.carousel-indicators button:focus{
+    outline: none;
+}
+
+.carousel-indicators .active{
+    color: darkolivegreen;
+    background-color: darkolivegreen;
+}
+
+.carouselbutton{
+    position: absolute;
+    top: 25%;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    height: 50%;
+    border: none;
+    background-color: transparent;
+    /* padding: 2px; */
+}
+
+.intro{
+
+}
+
+.intro div{
+    padding: 1cm;
+}
+
+.intro h1{
+    font-size: 70px;
+}
+
+.intro span{
+    font-size: 23px;
+}
+
+.carouselbutton:active{
+    border: none;
+}
+
+.glinkspan{
+    position:absolute; right: 55%; height: 100%; top: 7%; 
+}
+
+.navbar-brand{
+    font-size: 50px;
+}
+
+.galleryinfo{
+    background-color: transparent;
+}
+
+.galleryinfo .col-md-7{
+    padding: 1cm; font-size:20px;  color: white; background-color: rgb(52, 67, 30); height: 10cm; border-radius: 10px;
+}
+
+.galleryinfo .col-md-7 span{
+    text-align: left; margin-left: 2cm; margin-right: 1cm; position: absolute; top: 25%;
+}
+
+.bio span{
+    position: absolute; bottom:17px;
+}
+
+.kloc{
+    position: relative; height: 30px;
+}
+
+.cal{
+    position: relative;
+    height: 130px;
+}
+
+.reveal{
+    position: relative;
+    transform: translatex(-50px);
+    opacity: 0;
+    transition: 2s all ease;
+  }
+  
+.reveal.active{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Fade in and move left */
+@keyframes enterAnimation {
+    0% {
+        opacity: 0;
+        left: -1600px;
+        /* transform: translateX(-100%); */
+    }
+    100% {
+        opacity: 1;
+        left: 0px;
+        /* transform: translateX(0); */
+    }
+}
+
+
+@media screen and (max-width: 860px) 
+{ 
+   .bio .col-5{
+      font-size: 10px;
+   }
+    .bio h1{
+          font-size: 20px;
+    }
+    
+    .biocap{
+        opacity: 0;
+        position: absolute;
+        top:0;
+    }
+    .kloc{
+        height: 30px;
+    }
+    
+    .navbar-brand{
+        margin-top: 10px;
+        font-size: 30px;
+    }
+
+    .sorry{
+        position: relative;
+    }
+
+    .cal{
+        height: 50px;
+    }
+
+    .glinkspan{
+        position: relative;
+        margin: auto;
+        right: auto;
+        left: auto;
+    }
+    .galleryinfo{
+        background-color: rgb(52, 67, 30);
+    }
+    .galleryinfo .col-md-7 span{
+        color: white;
+        /* font-size: 12px; */
+        position: relative;
+        margin: 0;
+        top: 0;
+    }
+
+    .gallerylink{
+        border: none;
+    }
+    .gallerylink:hover{
+        background-color: rgba(255,255,255,0.2);
+    }
+    .carousel-item img{
+        height: 55vh;
+    }
+    .intro{
+        margin-top: 0;
+    }
+    .intro div{
+        padding: 1cm;
+    }
+    
+    .intro h1{
+        font-size: 40px;
+    }
+    
+    .intro span{
+        font-size: 20px;
+    }
+}
