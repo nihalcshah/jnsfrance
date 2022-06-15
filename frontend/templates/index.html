@@ -76,7 +76,7 @@
                 <div class="content">
                   <div>
                     <h2>{{event.place}}</h2>
-                    <a href="{{event.googlelink}}">
+                    <a class="ml-2" target="_blank" href="{{event.googlelink}}">
                       <i class="fa fa-map-marker" aria-hidden="true"></i>
                     </a>
                   </div>
@@ -93,7 +93,7 @@
                 <div class="content">
                   <div class="row">
                     <h2 class="">{{event.place}}</h2>
-                    <a class="ml-2" href="{{event.googlelink}}">
+                    <a class="ml-2" target="_blank" href="{{event.googlelink}}">
                       <i class="fa fa-map-marker" aria-hidden="true"></i>
                     </a>
                   </div>
@@ -116,14 +116,15 @@
               <span style="" class="row"><pre></pre>JNSFamily's France Itinerary</span>
               <p style="" class="row">
                 <p>
-                  In our planning of France, as well as out exploration of it, we will need <br>
+                  In our planning of France, as well as our exploration of it, we will need <br>
                   more proper planning and transparency in our plans. This purpose of this website <br>
                   is to organize our information into a more solid display method. <br> <br>
                   This tool will not only come into use with smaller things during our planning stage, <br>
-                  such as deciding where we are going and how everthing fits in, but will also allow us to <br>
-                  organize ourselves in France as well.
+                  such as deciding where we are going and how everything fits in, but will also allow us to <br>
+                  organize ourselves in France.
                   <br><br>
-                  Check the <a href="">tutorial</a> page on how to add events to the timeline.
+                  Check the <a href="{% url 'tutorials' %}">tutorial</a> page on how to add events to the timeline. <br>
+                  There is an example date written on
                 </p>
               </p>
               
