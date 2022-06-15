@@ -10,6 +10,10 @@ def Home(request):
     for i in events:
         i.time = i.time.strftime("%A, %B %d|%H:%M").split("|")
         i.formattedtime = i.time[1]
+        ind = i.description.rfind(".")
+        if ind != -1:
+            i.description = i.description[:ind+1]
+
     if request.method == 'POST':
         dates = {i.time[0] for i in events}
         organizebydate = {date:[] for date in dates}
