@@ -177,6 +177,13 @@ body {
   color: white;
 }
 
+.container .content p i {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  color: white;
+}
+
 @media (max-width: 767.98px) {
   .timeline::after {
     left: 90px;

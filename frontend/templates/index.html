@@ -29,14 +29,14 @@
                         </li>
                         <li class="nav-item dropdown ">
                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
-                            Dates
+                            Itineraries
                           </a>
                           
                           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <form method="post" action="">
                               {% csrf_token %}
-                              {% for d in dates %}
-                                <li><input class="dropdown-item" type="submit" name="date" value="{{d}}"></li>
+                              {% for i in Itineraries %}
+                                <li><input class="dropdown-item" type="submit" name="Itinerary" value="{{i}}"></li>
                               {% endfor %}
                             </form>
                           </ul>
@@ -56,8 +56,8 @@
       <div class="container-fluid intro">
           <div style="">
               <h1 style="" class="row">Timeline</h1>
-              <span style="" class="row"><pre></pre>JNSFamily's France Itinerary: {{date}}
-              <br>  Scroll to see more</span>
+              <span style="" class="row"><pre></pre>JNSFamily's France Itinerary: {{Itinerary}}
+              <!-- <br>  Scroll to see more</span> -->
               
               
           </div>
@@ -67,44 +67,37 @@
     
 
     <section class="container-fluid" style="margin-bottom: 0; bottom:0; left: -5%;">
+      {% for date in dates%}
+        <h2 style="margin-left: 20px;">{{date.date}}</h2>
         <div class="timeline">
-          {% for event, side in timelinevals %}
-              {% if side%}
-              <div class="container right reveal-right">
-                <div class="date">{{event.formattedtime}}</div>
+          {% for event, side in date.events %}
+              
+              <div class="container {% if side%} right reveal-right {% else %} left reveal-left {% endif %}">
+                <div class="date">{{event.time}}</div>
                 <!-- <i class="icon fa fa-home"></i> -->
                 <div class="content">
                   <div>
                     <h2>{{event.place}}</h2>
-                    <a class="ml-2" target="_blank" href="{{event.googlelink}}">
-                      <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    </a>
                   </div>
+                  {% if event.travel %}
+                  <i><p>Travel</p></i>
+                  {% endif %}
+                  {% if event.hotel %}
+                  <i><p>Hotel</p></i>
+                  {% endif %}
                   <p>
                     {{event.description}}
                   </p>
-                  
-                </div>
-              </div>
-              {% else %}
-              <div class="container left reveal-left">
-                <div class="date">{{event.formattedtime}}</div>
-                <!-- <i class="icon fa fa-home"></i> -->
-                <div class="content">
-                  <div class="row">
-                    <h2 class="">{{event.place}}</h2>
-                    <a class="ml-2" target="_blank" href="{{event.googlelink}}">
-                      <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  {% if event.googlelink %}
+                    <a class="" style="text-decoration: underline;" target="_blank" href="{{event.googlelink}}">
+                      More info
                     </a>
-                  </div>
-                  <p class="row">
-                    {{event.description}}
-                  </p>
+                  {% endif %}
                 </div>
               </div>
-              {% endif %}
           {% endfor %}
         </div>
+      {% endfor %}
 
 
     </section>
@@ -116,6 +109,10 @@
               <span style="" class="row"><pre></pre>JNSFamily's France Itinerary</span>
               <p style="" class="row">
                 <p>
+                  <b>Update: <br>
+                  Instead of sorting by dates, we are sorting by Itineraries now. <br>
+                  An example Itinerary has been placed on the page under Itineraries. <br>
+                  Add your own Itinerary to the page and add events to that Initerary.</b> <br> <br> 
                   In our planning of France, as well as our exploration of it, we will need <br>
                   more proper planning and transparency in our plans. This purpose of this website <br>
                   is to organize our information into a more solid display method. <br> <br>
@@ -124,7 +121,7 @@
                   organize ourselves in France.
                   <br><br>
                   Check the <a href="{% url 'tutorial' %}">tutorial</a> page on how to add events to the timeline. <br>
-                  There is an example date written on
+                  There is an example Itinerary written on the timeline, but you should add your own Itinerary.
                 </p>
               </p>
               
